@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #a{
+            height: 300px;width: 100%;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        $('#qw').click(function () {
+            var a=window.document.location.href;
+            var pathname=window.document.location.pathname;
+            var pos=a.indexOf(pathname);
+            var local=a.substring(0,pos);
+            var projectname=pathname.substring(0,pathname.substr(1).indexOf('/')+1);
+            var aaa=local+projectname
+            var asa=a+"---"+pathname+"---"+pos+"---"+local+"---"+projectname+"---"+aaa;
+           /* http://localhost:8080/SSM_frist_bookmanager_war_exploded/bookmain.html#---
+                // /SSM_frist_bookmanager_war_exploded/bookmain.html---21---http://localhost:8080---
+                // /SSM_frist_bookmanager_war_exploded---http://localhost:8080/SSM_frist_bookmanager_war_exploded*/
+
+                alert(asa);
+        });
+    });
+</script>
+</head>
+<body>
+<form action="book/list" method="get" target="a">
+    查找:<input type="text" id="n" name="n">
+    <input type="submit" value="查找">
+</form>
+<h1 id="qw">sfsdfattttqq</h1>
+<iframe id="a" name="a"></iframe>
+<nav>
+    <ul>
+        <li><a>上一页</a></li>
+        <li><a>下一页</a></li>
+    </ul>
+</nav>
+</body>
+</html>
